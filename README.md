@@ -7,7 +7,8 @@ installing as part of using the `mississippi` script set, all the
 necessary dependencies should already be installed.
 
 # Usage
-Simply import the package:
+After cloning the repository into the root directory of your project, you
+can simply import it:
 
 ```
 import spanning_trees
