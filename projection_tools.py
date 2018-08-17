@@ -5,10 +5,11 @@ Created on Wed Jul  4 11:44:50 2018
 @author: MGGG
 """
 
-from equi_partition_tools import equi_split
 import itertools
 import networkx as nx
 import random
+
+from .equi_partition_tools import equi_split
 
 ######Projection tools:
     

@@ -6,9 +6,10 @@ Created on Sat Jul  7 16:31:04 2018
 
 """
 import networkx as nx
-from tree_tools import log_number_trees
 import numpy as np
 import matplotlib.pyplot as plt
+
+from .tree_tools import log_number_trees
 
 def visualize_partition(graph, partition, color_likelihood = False):
     for i in range(len(partition)):
@@ -21,14 +22,14 @@ def visualize_partition(graph, partition, color_likelihood = False):
     populations = [total_pop(partition[i]) for i in range(len(partition))]
     max_pop = max(populations)
     min_pop = min(populations)
-    name = str(max_pop) + " " + str(min_pop)
+    name = f"./maps/{int(max_pop)}_{int(min_pop)}.svg"
     color_map = {i : i for i in range(100)}
     node_colors = [color_map[graph.nodes[vertex]["district"] ] for vertex in graph.nodes()]
 
     edge_colors = [graph.edges[edge]["tree"] for edge in graph.edges()]
     nx.draw(graph, pos=nx.get_node_attributes(graph, 'pos'), cmap=plt.get_cmap('jet'), node_color=node_colors, edge_color=edge_colors, node_size = 20, width = .5)
     #plt.text(10, 10, str(populations))
-    plt.savefig(name, format='svgz', dpi= 10000)
+    plt.savefig(name, format='svg', dpi= 1000000)
     
 def visualize_partition_with_likelihoods(graph, partition, color_likelihood = False):
     for i in range(len(partition)):

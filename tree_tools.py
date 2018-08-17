@@ -14,13 +14,13 @@ Created on Tue Jun 26 12:01:21 2018
 
 import networkx as nx
 import numpy as np
+import scipy
 import scipy.linalg
 from scipy.sparse import csc_matrix
-import scipy
 from scipy import array, linalg, dot
-from projection_tools import remove_edges_map
-
 from networkx.algorithms.centrality.flow_matrix import *
+
+from .projection_tools import remove_edges_map
 
 
 ######Tree counting

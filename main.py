@@ -5,12 +5,13 @@ Created on Fri Jul  6 17:32:53 2018
 @author: MGGG
 """
 
-from walk_tools import equi_shadow_walk
 import networkx as nx
-from tree_sampling_tools import random_equi_partitions, random_spanning_tree, random_spanning_tree_wilson, random_equi_partitions_fast, random_almost_equi_partitions_fast, random_almost_equi_partitions, random_almost_equi_partitions_with_walk, random_almost_equi_partitions_fast_with_walk
-#from equi_partition_tools import check_delta_equi_split
-from visualization_tools import visualize_partition, visualize_partition_with_populations
 import numpy as np
+
+from .walk_tools import equi_shadow_walk
+from .tree_sampling_tools import random_equi_partitions, random_spanning_tree, random_spanning_tree_wilson, random_equi_partitions_fast, random_almost_equi_partitions_fast, random_almost_equi_partitions, random_almost_equi_partitions_with_walk, random_almost_equi_partitions_fast_with_walk
+#from equi_partition_tools import check_delta_equi_split
+from .visualization_tools import visualize_partition, visualize_partition_with_populations
 
 
 def explore_random(graph, num_maps, num_blocks, pictures = False, divide_and_conquer = False, equi = False, with_walk = True, delta = .1):
@@ -60,20 +61,15 @@ def explore_random(graph, num_maps, num_blocks, pictures = False, divide_and_con
             
     return tree_partitions
 
+
 def total_pop(graph):
-    
     return np.sum( [graph.nodes[x]["POP10"] for x in graph.nodes()] )
 
-
-        
-     
+"""
 cuts = 4
 graph = nx.grid_graph([10*cuts,10*cuts])
 for vertex in graph:
     graph.nodes[vertex]["geopos"] = vertex
     graph.nodes[vertex]["POP10"] = 1
 partition = explore_random(graph, 1, cuts, pictures = True, divide_and_conquer = True, equi = False, with_walk = False, delta = .1)[0]
-
-
-    
-    
+"""

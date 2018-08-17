@@ -4,11 +4,13 @@ Created on Fri Jul  6 17:28:34 2018
 
 @author: MGGG
 """
-from equi_partition_tools import equi_split
+
 import random
 import networkx as nx
-from Broder_Wilson_algorithms import random_spanning_tree_wilson
-from projection_tools import remove_edges_map
+
+from .equi_partition_tools import equi_split
+from .Broder_Wilson_algorithms import random_spanning_tree_wilson
+from .projection_tools import remove_edges_map
 ###Tree walk
     
 def propose_step(graph,tree):
